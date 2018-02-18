@@ -49,7 +49,8 @@ class RequestMessage(BaseMessage):
         payload = io.BytesIO()
         # Advance num bytes equal to header size - the header is written later
         # after the payload of all segments and parts has been written:
-        payload.seek(self.header_size, io.SEEK_CUR)
+#         payload.seek(self.header_size, io.SEEK_CUR)
+        payload.seek(self.header_size, 1)
 
         # Write out payload of segments and parts:
         self.build_payload(payload)
@@ -62,7 +63,8 @@ class RequestMessage(BaseMessage):
         # Go back to begining of payload for writing message header:
         payload.seek(0)
         payload.write(packed_header)
-        payload.seek(0, io.SEEK_END)
+#         payload.seek(0, io.SEEK_END)
+        payload.seek(0, 2)
 
         trace(self)
 

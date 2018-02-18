@@ -41,9 +41,12 @@ else:
 
 logger = logging.getLogger('pyhdb')
 
-SEEK_SET = io.SEEK_SET
-SEEK_CUR = io.SEEK_CUR
-SEEK_END = io.SEEK_END
+# SEEK_SET = io.SEEK_SET
+# SEEK_CUR = io.SEEK_CUR
+# SEEK_END = io.SEEK_END
+SEEK_SET = 0
+SEEK_CUR = 1
+SEEK_END = 2
 
 
 def from_payload(type_code, payload, connection):
